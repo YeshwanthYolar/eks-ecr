@@ -16,10 +16,10 @@ resource "aws_instance" "eks_manager" {
       
 }
 
-output "jenkins_admin_password" {
-  value       = "ssh -i ~/.ssh/kubectl.pem ubuntu@${aws_instance.eks_manager.public_ip} 'cat /home/ubuntu/jenkins-password.txt'"
-  description = "Run this command to fetch the Jenkins admin password"
-}
+# output "jenkins_admin_password" {
+#   value       = "ssh -i ~/.ssh/kubectl.pem ubuntu@${aws_instance.eks_manager.public_ip} 'cat /home/ubuntu/jenkins-password.txt'"
+#   description = "Run this command to fetch the Jenkins admin password"
+# }
 
 resource "aws_security_group" "eks_manager_sg" {
   name   = "eks-manager-sg"
