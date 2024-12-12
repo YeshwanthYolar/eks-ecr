@@ -25,3 +25,37 @@ variable "cluster_version" {
     type = string
     default = "1.31"
 }
+
+variable "node-group_name" {
+  description = "name of the eks node group name"
+  type = string
+  default = "dev-eks-cluster-node-group"
+  
+}
+
+variable "desired-state" {
+  description = "no. of desired state"
+  type = number
+  default = 1
+  
+}
+
+variable "maximum-state" {
+  description = "no. of maximum state"
+  type = number
+  default = 2
+  
+}
+variable "minimum-state" {
+  description = "no. of minimum state"
+  type = number
+  default = 1
+  
+}
+
+variable "instance_types" {
+  description = "type of node instances"
+  type = list(string)
+  default = ["t2.large"]
+  
+}
